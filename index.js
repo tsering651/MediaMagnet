@@ -1,7 +1,11 @@
 import express from 'express'
+import indexRouter from './routes/index.js'
 
 const app=express();
 const port=8001;
+
+//middleware to redirect the url to the routes folder
+app.use('/',indexRouter)
 
 app.get('/',(req,res)=>{
     return res.send("Hello world");
